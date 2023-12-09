@@ -13,13 +13,10 @@ jobs:
       EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }} 
 
     steps:
-    - name: Checkout code
-      run: git clone https://github.com/PoliNetworkOrg/PoliFemo.git
-
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: 18
+        node-version: 20
 
     - name: Install Expo CLI
       run: npm install -g expo-cli
@@ -51,7 +48,6 @@ jobs:
       with:
         name: apk-artifacts
         path: artifacts/
-
 
     - name: Set unique tag name
       id: set_tag
