@@ -42,10 +42,11 @@ jobs:
         eas-version: latest
         token: ${{ secrets.EXPO_TOKEN }}
 
-    - name: Install dependencies & Build APK
-      run: |
-        yarn
-        eas build --platform android --local
+    - name: Install dependencies
+      run: yarn
+
+    - name: Build APK
+      run: eas build --platform android --local
 
     - name: Collect APK files
       run: |
