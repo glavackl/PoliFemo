@@ -38,7 +38,6 @@ jobs:
 
     - name: Install dependencies & Build APK
       run: |
-        cd PoliFemo
         yarn
         eas build --platform android --local
 
