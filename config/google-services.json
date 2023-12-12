@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:771411215965:android:8e97c2ace711c84561afb4",
         "android_client_info": {
-          "package_name": "org.polinetwork.polifemo"
+          "package_name": "org.glavackl.polifemo"
         }
       },
       "oauth_client": [
@@ -34,7 +34,7 @@
               "client_id": "771411215965-co8avdq34spn3u72hhs3npgt642qgib8.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "org.polinetwork.polifemo"
+                "bundle_id": "org.glavackl.polifemo"
               }
             }
           ]

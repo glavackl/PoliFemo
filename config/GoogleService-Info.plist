@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>org.polinetwork.polifemo</string>
+	<string>org.glavackl.polifemo</string>
 	<key>PROJECT_ID</key>
 	<string>polifemo-89bb5</string>
 	<key>STORAGE_BUCKET</key>
