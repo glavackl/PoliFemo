@@ -36,6 +36,12 @@ jobs:
         pwd
         ls -la
 
+    - name: 🏗 Setup EAS
+      uses: expo/expo-github-action@v8
+      with:
+        eas-version: latest
+        token: ${{ secrets.EXPO_TOKEN }}
+
     - name: Install dependencies & Build APK
       run: |
         yarn
