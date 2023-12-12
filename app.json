@@ -2,7 +2,7 @@
   "expo": {
     "name": "polifemo",
     "slug": "polifemo",
-    "owner": "polinetwork-org",
+    "owner": "glavack",
     "version": "0.2.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -36,7 +36,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "3279e65d-78fe-4db0-9d4f-368a501f4912"
+        "projectId": "a29461c9-2ab4-4169-9cbe-db1ea64fdbed"
       }
     },
     "runtimeVersion": {
