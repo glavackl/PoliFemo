@@ -1,0 +1,69 @@
+name: Build Android APK for Expo Go
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }} 
+
+    steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 20
+
+    - name: Install Expo CLI
+      run: npm install -g expo-cli
+
+    - name: Install Eas
+      run: npm install -g eas-cli
+
+    - name: yarn
+      run: corepack enable
+
+    - name: pwd & ls
+      run: |
+        pwd
+        ls -la
+
+    - name: Install dependencies & Build APK
+      run: |
+        cd PoliFemo
+        yarn
+        eas build --platform android --local
+
+    - name: Collect APK files
+      run: |
+        mkdir -p artifacts
+        find . -name "*.aab" -exec mv {} artifacts/ \;
+
+    - name: Upload APK artifacts to action
+      uses: actions/upload-artifact@v2
+      with:
+        name: apk-artifacts
+        path: artifacts/
+
+    - name: Set unique tag name
+      id: set_tag
+      run: echo "TAG_NAME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+
+    - name: Create and Push Git Tag
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git tag -a ${{ env.TAG_NAME }} -m "Version ${{ env.TAG_NAME }}"
+        git push --tags
+        
+    - name: Create GitHub Release
+      id: create_release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: artifacts/*.aab
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
