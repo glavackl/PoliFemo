@@ -1,5 +1,9 @@
-import { useEffect, useState } from "react"
+
+import {  FC, useEffect, useState } from "react"
+
+
 import { ScrollView, View } from "react-native"
+
 
 import { useNavigation } from "navigation/NavigationTypes"
 
