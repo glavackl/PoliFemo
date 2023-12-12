@@ -52,6 +52,7 @@ jobs:
       run: |
         mkdir -p artifacts
         find . -name "*.aab" -exec mv {} artifacts/ \;
+        find . -name "*.apk" -exec mv {} artifacts/ \;
 
     - name: Upload APK artifacts to action
       uses: actions/upload-artifact@v2
