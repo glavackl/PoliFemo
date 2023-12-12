@@ -76,6 +76,9 @@ jobs:
       id: create_release
       uses: softprops/action-gh-release@v1
       with:
-        files: artifacts/*.aab
+        tag_name: ${{ env.TAG_NAME }}
+        files: |
+          artifacts/*.aab
+          artifacts/*.apk
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
