@@ -70,6 +70,7 @@ jobs:
         git config --local user.name "GitHub Action"
         git tag -a ${{ env.TAG_NAME }} -m "Version ${{ env.TAG_NAME }}"
         git push --tags
+        git push origin ${{ env.TAG_NAME }}
         
     - name: Create GitHub Release
       id: create_release
